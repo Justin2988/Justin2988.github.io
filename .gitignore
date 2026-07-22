@@ -1,0 +1,21 @@
+# Drop folder for source material — never published.
+# Put headshots, drafts, certificates, and working documents here.
+_incoming/
+
+# Tooling / editor
+.claude/
+.vscode/
+.idea/
+node_modules/
+
+# OS cruft
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*
+
+# OneDrive conflict copies
+*-conflict-*
+* - Copy.*

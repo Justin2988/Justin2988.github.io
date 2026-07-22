@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://justin2988.github.io/sitemap.xml
