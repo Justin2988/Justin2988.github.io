@@ -38,14 +38,22 @@ how you'd actually put it, and cut anything you wouldn't defend in an interview.
 
 ## High value
 
-### 3. Headshot
+### 3. Headshot — higher resolution
 
-Drop the highest-resolution version you have into `_incoming/`. I'll crop, size, and wire it in.
+Done, with a caveat. The photo you sent is wired into the hero on `index.html`, but the original
+was only 400×400, which crops to 320×400 — about half the resolution the frame wants. It looks
+correct on a standard display and soft on a high-DPI laptop or phone.
 
-Currently `index.html` shows a "JB" monogram placeholder. The swap instructions are in an HTML
-comment right above it if you want to do it yourself — save the photo as
-`assets/img/justin-barczewski.jpg` (portrait crop, roughly 800×1000), delete the
-`portrait-placeholder` div, and uncomment the `<img>` tag directly above it.
+If you can find a larger original — the file straight off the camera or phone, or LinkedIn's
+full-size download rather than the profile thumbnail — drop it in `_incoming/headshot-source.jpg`
+and run:
+
+```
+powershell -ExecutionPolicy Bypass -File tools\make-headshot.ps1
+```
+
+That re-crops to 4:5 and writes `assets/img/justin-barczewski.jpg`. The script never upscales, so
+the output is only ever as sharp as what you feed it.
 
 ### 4. SafetyLink case study
 

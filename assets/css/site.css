@@ -497,24 +497,6 @@ hr {
   z-index: -1;
 }
 
-/* Placeholder shown until a real headshot is supplied */
-.portrait-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  background: linear-gradient(160deg, var(--parchment-deep), var(--brass-wash));
-  border: 1px solid var(--rule-strong);
-  border-radius: var(--radius-lg);
-  font-family: var(--font-display);
-  font-size: clamp(3.5rem, 8vw, 5.5rem);
-  font-weight: 600;
-  color: var(--brass);
-  letter-spacing: 0.02em;
-  box-shadow: var(--shadow-lg);
-}
-
 @media (max-width: 860px) {
   .hero__grid { grid-template-columns: 1fr; gap: var(--space-lg); }
   .hero__portrait { order: -1; width: min(100%, 260px); justify-self: start; }
