@@ -82,11 +82,35 @@ function resolveUrlToFile(urlPath) {
   return null;
 }
 
+const redirectStubs = new Set();
+
 // Pass 2 — per-file checks.
 for (const file of files) {
   const rel = relative(ROOT, file).replace(/\\/g, '/');
   const raw = readFileSync(file, 'utf8');
   const html = stripComments(raw);
+
+  /* --- redirect stubs ---------------------------------------------- */
+
+  // Old URLs that now forward into the single page. They aren't pages, so the
+  // only thing worth checking is that the target they forward to exists.
+  const refresh = raw.match(/<meta http-equiv="refresh" content="\d+;\s*url=([^"]+)">/i);
+  if (refresh) {
+    redirectStubs.add('/' + rel);
+
+    if (!/name="robots" content="noindex"/.test(raw)) {
+      err(rel, 'redirect stub must carry <meta name="robots" content="noindex">');
+    }
+
+    const [path, anchor] = refresh[1].split('#');
+    const target = resolveUrlToFile(path || '/');
+    if (!target) {
+      err(rel, `redirect points at a URL that does not resolve: ${refresh[1]}`);
+    } else if (anchor && !anchorsByPage.get(target)?.has(anchor)) {
+      err(rel, `redirect target anchor #${anchor} does not exist in ${target}`);
+    }
+    continue;
+  }
 
   /* --- document basics ------------------------------------------- */
 
@@ -228,6 +252,7 @@ if (existsSync(sitemapPath)) {
   for (const file of files) {
     const rel = '/' + relative(ROOT, file).replace(/\\/g, '/');
     if (rel === '/404.html') continue;
+    if (redirectStubs.has(rel)) continue; // noindex — deliberately unlisted
     if (!listed.has(rel)) warn('sitemap.xml', `${rel} is not listed`);
   }
 } else {

@@ -93,48 +93,123 @@
   }
 
   /* ------------------------------------------------------------------------
-     Work filter
-     Buttons are rendered by the page; without JS every card simply stays shown.
+     Scroll spy
+     Highlights the nav link for the section currently in view. Only sections
+     that a header link actually points at participate; on pages without those
+     sections (the CV) this is a no-op.
      ------------------------------------------------------------------------ */
 
-  function initFilter() {
-    var bar = document.querySelector('[data-filter-bar]');
-    var grid = document.querySelector('[data-filter-grid]');
-    if (!bar || !grid) return;
+  function initScrollSpy() {
+    var links = document.querySelectorAll('.site-header .nav__link[href*="#"]');
+    var targets = [];
 
-    var buttons = Array.prototype.slice.call(bar.querySelectorAll('[data-filter]'));
-    var cards = Array.prototype.slice.call(grid.querySelectorAll('[data-categories]'));
-    var status = document.querySelector('[data-filter-status]');
+    Array.prototype.forEach.call(links, function (link) {
+      var hash = link.getAttribute('href').split('#')[1];
+      var section = hash && document.getElementById(hash);
+      if (section) targets.push({ link: link, section: section });
+    });
 
-    function apply(filter) {
-      var shown = 0;
+    if (!targets.length) return;
 
-      cards.forEach(function (card) {
-        var categories = (card.getAttribute('data-categories') || '').split(/\s+/);
-        var match = filter === 'all' || categories.indexOf(filter) !== -1;
-        card.hidden = !match;
-        if (match) shown++;
+    var ticking = false;
+
+    function update() {
+      ticking = false;
+
+      // The "reading line" sits a third of the way down the viewport.
+      var line = window.innerHeight * 0.35;
+      var active = null;
+
+      targets.forEach(function (target) {
+        var rect = target.section.getBoundingClientRect();
+        if (rect.top <= line && rect.bottom > line) active = target;
       });
 
-      buttons.forEach(function (button) {
-        button.setAttribute(
-          'aria-pressed',
-          button.getAttribute('data-filter') === filter ? 'true' : 'false'
-        );
+      targets.forEach(function (target) {
+        target.link.classList.toggle('is-active', target === active);
       });
+    }
 
-      if (status) {
-        status.textContent =
-          shown + (shown === 1 ? ' project shown' : ' projects shown');
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    update();
+  }
+
+  /* ------------------------------------------------------------------------
+     Deep links into <details>
+     Old case-study URLs redirect to /#<case-id>. When a hash points at (or
+     inside) a collapsed <details>, open it before scrolling so the reader
+     lands on the content rather than a closed card.
+     ------------------------------------------------------------------------ */
+
+  function initHashOpen() {
+    function openForHash() {
+      var id = location.hash.replace(/^#/, '');
+      if (!id) return;
+
+      var el;
+      try {
+        el = document.getElementById(decodeURIComponent(id));
+      } catch (e) {
+        el = document.getElementById(id);
+      }
+      if (!el) return;
+
+      var details = el.tagName === 'DETAILS' ? el : el.closest('details');
+      var opened = false;
+
+      while (details) {
+        if (!details.open) {
+          details.open = true;
+          opened = true;
+        }
+        details = details.parentElement && details.parentElement.closest('details');
+      }
+
+      // Opening shifts layout, so re-run the scroll the browser already did.
+      if (opened) {
+        requestAnimationFrame(function () {
+          el.scrollIntoView();
+        });
       }
     }
 
-    bar.addEventListener('click', function (event) {
-      var button = event.target.closest('[data-filter]');
-      if (button) apply(button.getAttribute('data-filter'));
+    openForHash();
+    window.addEventListener('hashchange', openForHash);
+  }
+
+  /* ------------------------------------------------------------------------
+     Print
+     Collapsed content would vanish from paper, so open every <details> before
+     printing and restore the reader's state afterwards.
+     ------------------------------------------------------------------------ */
+
+  function initPrintExpand() {
+    var reopened = [];
+
+    window.addEventListener('beforeprint', function () {
+      reopened = [];
+      Array.prototype.forEach.call(
+        document.querySelectorAll('details:not([open])'),
+        function (details) {
+          details.open = true;
+          reopened.push(details);
+        }
+      );
     });
 
-    apply('all');
+    window.addEventListener('afterprint', function () {
+      reopened.forEach(function (details) {
+        details.open = false;
+      });
+      reopened = [];
+    });
   }
 
   /* ------------------------------------------------------------------------
@@ -229,7 +304,9 @@
   function init() {
     document.documentElement.classList.remove('no-js');
     initNav();
-    initFilter();
+    initScrollSpy();
+    initHashOpen();
+    initPrintExpand();
     initReveal();
     initEmail();
     initYear();

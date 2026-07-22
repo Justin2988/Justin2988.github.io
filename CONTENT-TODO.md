@@ -23,8 +23,8 @@ One command, takes a second, and `node tools/verify.mjs` will stop complaining.
 
 ### 2. Read the philosophy statements — **before launch**
 
-`about.html` contains two long-form statements I drafted in your voice from your résumé and
-dissertation:
+The Philosophy section of `index.html` (`/#philosophy`) contains two long-form statements I
+drafted in your voice from your résumé and dissertation:
 
 - **Leadership philosophy** — four commitments, built around the "manage the gap rather than
   eliminate it" finding from your study
@@ -57,9 +57,10 @@ the output is only ever as sharp as what you feed it.
 
 ### 4. SafetyLink case study
 
-`work/safetylink-implementation.html` is the one page with no real content — I have nothing on
-this project beyond the name. The page currently shows an honest "case study in preparation"
-note, and there's a detailed question list in an HTML comment inside the file.
+The SafetyLink block in the `#work` section of `index.html` is the one case study with no real
+content — I have nothing on this project beyond the name. It currently shows an honest "case
+study in preparation" note, and there's a detailed question list in an HTML comment inside that
+block.
 
 The short version of what I need:
 
@@ -69,15 +70,15 @@ The short version of what I need:
 - What training and documentation you built
 - **Any numbers at all** — sites, users, timeline, adoption, ticket volume, audit outcomes
 
-Once it's written, delete the "in preparation" callout on that page and the `tag--muted` badge on
-its card in `work/index.html`.
+Once it's written, delete the "in preparation" callout and the `tag--muted` badge in that block's
+summary.
 
 ### 5. Expand the VA case study
 
-`work/ehr-modernization-program.html` is built entirely from your résumé. Anything you can add
-that's publicly shareable — specific skills applied, scale, the shape of a problem you solved —
-makes it stronger. Everything on that page stays at a level appropriate for public discussion; keep
-it that way, and when in doubt leave it out.
+The EHR Modernization case study in the `#work` section of `index.html` is built entirely from
+your résumé. Anything you can add that's publicly shareable — specific skills applied, scale, the
+shape of a problem you solved — makes it stronger. Everything there stays at a level appropriate
+for public discussion; keep it that way, and when in doubt leave it out.
 
 ---
 
@@ -129,7 +130,8 @@ on. Check ownership before publishing anything.
 The guide you sent recommends refreshing a portfolio once or twice a year. Two habits that make
 that painless:
 
-- Add new projects to `work/` as they happen, while the numbers are still fresh in your head.
-  Copy any existing case study as the template — they're all structurally identical.
+- Add new projects to the `#work` section of `index.html` as they happen, while the numbers are
+  still fresh in your head. Copy any existing `<details class="case">` block as the template —
+  they're all structurally identical.
 - Run `node tools/verify.mjs` before every push. It catches broken links, missing alt text,
   navigation that has drifted between pages, and placeholder text that slipped through.

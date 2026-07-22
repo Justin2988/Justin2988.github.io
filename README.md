@@ -12,17 +12,23 @@ Live at **https://justin2988.github.io**
 Plain HTML, CSS, and JavaScript. No framework, no build step, no dependencies. Edit a file, refresh
 the browser, push. `.nojekyll` tells GitHub Pages to serve the files exactly as written.
 
+The site is a **single page plus the CV**. Everything — profile, case studies, experience,
+research, philosophy, credentials, contact — lives on `index.html` behind anchor navigation, with
+case studies and long-form statements in `<details>` blocks that expand in place.
+
 ```
-index.html              Home
-about.html              Bio, leadership philosophy, teaching philosophy, experience
-research.html           Dissertation and research agenda
+index.html              The whole portfolio: #about #work #experience #research
+                        #philosophy #credentials #contact
 cv.html                 Full CV — print-styled, exports to PDF from the browser
-work/index.html         Filterable case study index
-work/*.html             Individual case studies
 404.html                Not-found page
 
+about.html              ┐
+research.html           │ Redirect stubs. The old multi-page URLs forward into
+work/*.html             ┘ the matching /#section so links already shared keep working.
+
 assets/css/site.css     Everything visual. Design tokens live at the top.
-assets/js/site.js       Nav, filter, scroll reveal, email assembly. Progressive enhancement only.
+assets/js/site.js       Nav, scroll spy, deep links into <details>, scroll reveal,
+                        email assembly. Progressive enhancement only.
 assets/img/             Favicon, social card, photography
 
 tools/verify.mjs        Pre-publish checks
@@ -65,8 +71,11 @@ description, canonical URL, and a single `<h1>`.
   not inline.
 - `--brass` (`#A67C3D`) is only accessible at large sizes. Small text uses `--brass-text`
   (`#7A5620`). Don't collapse the two.
-- **Adding a case study:** copy an existing file in `work/`, replace the content, add a card to
-  `work/index.html` with the right `data-categories`, and add the URL to `sitemap.xml`.
+- **Adding a case study:** copy an existing `<details class="case">` block inside the `#work`
+  section of `index.html`, give it a unique `id`, and replace the content. The case studies are
+  structurally identical on purpose.
+- **Redirect stubs** (`about.html`, `research.html`, `work/*.html`) are frozen. They exist only so
+  old links keep resolving; don't add content to them.
 
 ## Accessibility
 
