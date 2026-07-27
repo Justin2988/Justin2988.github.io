@@ -117,9 +117,9 @@ on. Check ownership before publishing anything.
   the URL is circulating.
 - **No contact form.** You chose email plus LinkedIn — zero setup, nothing to break, no spam
   endpoint to maintain.
-- **Expected graduation shown as "2026."** Your résumé summary says August 2026 but the education
-  section says just 2026, so I used the more conservative form throughout. Tell me if you want the
-  month.
+- **Expected graduation shown as "August 2026."** This matches the specific date in your latest
+  résumé summary and keeps the portfolio consistent across the profile, research, credentials,
+  and CV sections.
 - **Light theme only.** No dark mode. A warm academic palette is right for this audience, and a
   half-finished second theme is a worse risk than not having one.
 
