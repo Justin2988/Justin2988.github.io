@@ -130,6 +130,9 @@ on. Check ownership before publishing anything.
 The guide you sent recommends refreshing a portfolio once or twice a year. Two habits that make
 that painless:
 
+- After the EdD is conferred, replace `assets/docs/Justin_Barczewski_Unofficial_Transcript.pdf`
+  with a privacy-reviewed final transcript and update the two transcript labels in `index.html`
+  and `cv.html` from "unofficial" to "final."
 - Add new projects to the `#work` section of `index.html` as they happen, while the numbers are
   still fresh in your head. Copy any existing `<details class="case">` block as the template —
   they're all structurally identical.

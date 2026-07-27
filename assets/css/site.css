@@ -977,6 +977,8 @@ hr {
   letter-spacing: 0.02em;
 }
 
+.cred .link-arrow { margin-top: 0.9rem; }
+
 /* Stat row */
 .stats {
   display: grid;
