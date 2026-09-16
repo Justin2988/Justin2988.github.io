@@ -1,7 +1,7 @@
 # justin2988.github.io
 
-Professional portfolio of Justin Barczewski — educational leader and EdD candidate in educational
-leadership, focused on higher education administration and program development.
+Professional portfolio of Justin Barczewski, Ed.D. — an educational leader focused on higher
+education, program development, instructional design, and adult learning.
 
 Live at **https://justin2988.github.io**
 

@@ -112,14 +112,13 @@ on. Check ownership before publishing anything.
 - **Location shown as "Cadillac, Michigan"** — no ZIP code.
 - **Email is assembled by JavaScript** rather than sitting in the HTML as plain text, with a
   readable `[at]`/`[dot]` fallback if scripts are blocked. Modest protection, no downside.
-- **Consider a cleaner email address.** `justinbar100@gmail.com` reads casually for a doctoral
-  candidate applying to academic administration roles. Changing it is easy now and painful once
+- **Consider a cleaner email address.** `justinbar100@gmail.com` reads casually for an EdD holder
+  applying to higher education roles. Changing it is easy now and painful once
   the URL is circulating.
 - **No contact form.** You chose email plus LinkedIn — zero setup, nothing to break, no spam
   endpoint to maintain.
-- **Expected graduation shown as "August 2026."** This matches the specific date in your latest
-  résumé summary and keeps the portfolio consistent across the profile, research, credentials,
-  and CV sections.
+- **EdD shown as completed in 2026.** This matches the updated résumé and keeps the portfolio
+  consistent across the profile, research, credentials, and CV sections.
 - **Light theme only.** No dark mode. A warm academic palette is right for this audience, and a
   half-finished second theme is a worse risk than not having one.
 
@@ -130,9 +129,9 @@ on. Check ownership before publishing anything.
 The guide you sent recommends refreshing a portfolio once or twice a year. Two habits that make
 that painless:
 
-- After the EdD is conferred, replace `assets/docs/Justin_Barczewski_Unofficial_Transcript.pdf`
-  with a privacy-reviewed final transcript and update the two transcript labels in `index.html`
-  and `cv.html` from "unofficial" to "final."
+- When a privacy-reviewed final transcript is available, replace
+  `assets/docs/Justin_Barczewski_Unofficial_Transcript.pdf` and update the transcript labels in
+  `index.html` and `cv.html` from "unofficial" to "final."
 - Add new projects to the `#work` section of `index.html` as they happen, while the numbers are
   still fresh in your head. Copy any existing `<details class="case">` block as the template —
   they're all structurally identical.
