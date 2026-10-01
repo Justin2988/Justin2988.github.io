@@ -108,12 +108,12 @@ on. Check ownership before publishing anything.
 
 ## Decisions I made for you — change any of these
 
-- **"Open to roles."** You're on a contract with Briljent (since September 2026), so the hero and
-  About sections say you're open to roles in higher education, instructional design, and program
-  leadership rather than actively job hunting. Adjust if that's not how you want to come across.
-- **Briljent is on the site but not the résumé yet.** The downloadable résumé
-  (`assets/docs/Justin_Barczewski_Resume.docx`) still ends with Take2. Replace it once you've added
-  Briljent so the two match.
+- **Positioned for online teaching.** Following the 2026 résumé summary, the hero, About, and
+  Contact sections lead with teaching online in business and management, project management,
+  education and leadership, and IT, with instructional design and program leadership as secondary.
+- **Briljent platform left unnamed.** Your résumé says "[Zoom/Teams/Webex]" as a placeholder. The
+  site and the downloadable copy just say "live virtual sessions." Fill in the real platform in
+  your own copy before sending it out.
 - **Phone number omitted.** Your résumé lists 231-577-8181. A public page invites scraping and
   robocalls; email and LinkedIn are higher-signal and lower-risk. Say the word and I'll add it.
 - **Location shown as "Cadillac, Michigan"** — no ZIP code.
