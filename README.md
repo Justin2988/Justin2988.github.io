@@ -17,8 +17,8 @@ research, philosophy, credentials, contact — lives on `index.html` behind anch
 case studies and long-form statements in `<details>` blocks that expand in place.
 
 ```
-index.html              The whole portfolio: #about #work #experience #research
-                        #philosophy #credentials #contact
+index.html              The whole portfolio, in reading order: #about #skills
+                        #experience #work #research #credentials #philosophy #contact
 cv.html                 Full CV — print-styled, exports to PDF from the browser
 404.html                Not-found page
 

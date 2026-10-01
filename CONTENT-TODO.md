@@ -34,6 +34,9 @@ They are substantive and defensible, but they are **my words about your beliefs*
 committee may ask you to expand on any sentence in them. Read both, change anything that isn't
 how you'd actually put it, and cut anything you wouldn't defend in an interview.
 
+Both were rewritten in plainer, first-person language in October 2026. Same ideas, simpler words,
+so give them a fresh read.
+
 ---
 
 ## High value
@@ -57,25 +60,23 @@ the output is only ever as sharp as what you feed it.
 
 ### 4. SafetyLink case study
 
-The SafetyLink block in the `#work` section of `index.html` is the one case study with no real
-content — I have nothing on this project beyond the name. It currently shows an honest "case
-study in preparation" note, and there's a detailed question list in an HTML comment inside that
-block.
+SafetyLink isn't on the current résumé and had no real content, so the "in preparation" card was
+taken off the site in the October 2026 cleanup (a half-finished card confused visitors more than it
+helped). Old links to `/work/safetylink-implementation.html` now land on the Projects section.
 
-The short version of what I need:
+If you want it back, send me:
 
 - What SafetyLink is, and what problem it solved at Mears
 - Your title and dates on the project
 - How you planned and phased the rollout
 - What training and documentation you built
-- **Any numbers at all** — sites, users, timeline, adoption, ticket volume, audit outcomes
+- **Any numbers at all**: sites, users, timeline, adoption, ticket volume, audit outcomes
 
-Once it's written, delete the "in preparation" callout and the `tag--muted` badge in that block's
-summary.
+Then copy the Mears case study block in `#work` and fill it in with the same headings.
 
 ### 5. Expand the VA case study
 
-The EHR Modernization case study in the `#work` section of `index.html` is built entirely from
+The VA Electronic Health Record Modernization case study (which now also covers the Power BI dashboards) in the `#work` section of `index.html` is built entirely from
 your résumé. Anything you can add that's publicly shareable — specific skills applied, scale, the
 shape of a problem you solved — makes it stronger. Everything there stays at a level appropriate
 for public discussion; keep it that way, and when in doubt leave it out.
@@ -107,6 +108,12 @@ on. Check ownership before publishing anything.
 
 ## Decisions I made for you — change any of these
 
+- **"Open to roles."** You're on a contract with Briljent (since September 2026), so the hero and
+  About sections say you're open to roles in higher education, instructional design, and program
+  leadership rather than actively job hunting. Adjust if that's not how you want to come across.
+- **Briljent is on the site but not the résumé yet.** The downloadable résumé
+  (`assets/docs/Justin_Barczewski_Resume.docx`) still ends with Take2. Replace it once you've added
+  Briljent so the two match.
 - **Phone number omitted.** Your résumé lists 231-577-8181. A public page invites scraping and
   robocalls; email and LinkedIn are higher-signal and lower-risk. Say the word and I'll add it.
 - **Location shown as "Cadillac, Michigan"** — no ZIP code.

@@ -681,8 +681,8 @@ hr {
   font-weight: 600;
   color: var(--brass-text);
 }
-.case__cta::before { content: "Read the case study"; }
-.case[open] .case__cta::before { content: "Close case study"; }
+.case__cta::before { content: "Read more"; }
+.case[open] .case__cta::before { content: "Show less"; }
 .case__cta::after { content: "→"; transition: transform 0.22s var(--ease); }
 .case__summary:hover .case__cta::after { transform: translateX(3px); }
 .case[open] .case__cta::after { content: "↑"; }
