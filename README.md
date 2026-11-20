@@ -1,7 +1,7 @@
 # justin2988.github.io
 
-Professional portfolio of Justin Barczewski, Ed.D. — an educational leader focused on higher
-education, program development, instructional design, and adult learning.
+Professional portfolio of Justin Barczewski, Ed.D. — an adult educator and learning and
+development professional focused on online teaching, instructional design, and adult learning.
 
 Live at **https://justin2988.github.io**
 
@@ -17,9 +17,10 @@ research, philosophy, credentials, contact — lives on `index.html` behind anch
 case studies and long-form statements in `<details>` blocks that expand in place.
 
 ```
-index.html              The whole portfolio, in reading order: #about #skills
-                        #experience #work #research #credentials #philosophy #contact
-cv.html                 Full CV — print-styled, exports to PDF from the browser
+index.html              The whole portfolio, in reading order: #about #experience
+                        #skills #work #research #credentials #philosophy #contact
+cv.html                 Academic CV — mirrors assets/docs/Justin_Barczewski_CV.pdf;
+                        print-styled, exports to PDF from the browser
 404.html                Not-found page
 
 about.html              ┐
@@ -30,6 +31,8 @@ assets/css/site.css     Everything visual. Design tokens live at the top.
 assets/js/site.js       Nav, scroll spy, deep links into <details>, scroll reveal,
                         email assembly. Progressive enhancement only.
 assets/img/             Favicon, social card, photography
+assets/docs/            Downloads: academic CV (PDF), professional resume (Word),
+                        unofficial transcript
 
 tools/verify.mjs        Pre-publish checks
 tools/make-og-image.ps1 Regenerates the social sharing card
@@ -69,8 +72,10 @@ description, canonical URL, and a single `<h1>`.
   between directories without breaking.
 - **Colors and type come from the custom properties** at the top of `site.css`. Change them there,
   not inline.
-- `--brass` (`#A67C3D`) is only accessible at large sizes. Small text uses `--brass-text`
-  (`#7A5620`). Don't collapse the two.
+- **Dark theme only** ("Night Study": deep navy, off-white text, gold accent). Every text token
+  (`--text`, `--text-soft`, `--text-faint`, `--accent`) passes WCAG AA on every surface token; the
+  ratios are noted at the top of `site.css`. Re-check contrast if you change any of them. Print
+  styles switch to black on white automatically, so the CV still prints cleanly.
 - **Adding a case study:** copy an existing `<details class="case">` block inside the `#work`
   section of `index.html`, give it a unique `id`, and replace the content. The case studies are
   structurally identical on purpose.

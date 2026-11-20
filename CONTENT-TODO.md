@@ -10,16 +10,14 @@ items marked **before launch**.
 
 ## Before launch
 
-### 1. Social preview image — **before launch**
+### 1. Social preview image — done
 
-The `og:image` tag on every page points at `assets/img/og-image.png`, which doesn't exist yet.
-Until it does, sharing a link on LinkedIn shows a text-only card. Generate it with:
+`assets/img/og-image.png` was regenerated in November 2026 in the dark theme, with the old
+"EdD Candidate" line replaced. If the tagline changes again, edit and re-run:
 
 ```
 powershell -ExecutionPolicy Bypass -File tools\make-og-image.ps1
 ```
-
-One command, takes a second, and `node tools/verify.mjs` will stop complaining.
 
 ### 2. Read the philosophy statements — **before launch**
 
@@ -87,8 +85,8 @@ for public discussion; keep it that way, and when in doubt leave it out.
 
 ### 6. Certificates and recognition
 
-Images or PDFs of the CSM certificate, Six Sigma White Belt, Azure Fundamentals, President's List,
-Dean's List, or Golden Key. The guide you sent specifically recommends educators include
+Images or PDFs of the CSM certificate, Azure Fundamentals, President's List, Dean's List, Golden
+Key, or NSLS. The guide you sent specifically recommends educators include
 professional certifications as portfolio artifacts. Drop them in `_incoming/` and I'll build a
 credentials gallery.
 
@@ -108,14 +106,20 @@ on. Check ownership before publishing anything.
 
 ## Decisions I made for you — change any of these
 
-- **Positioned for online teaching.** Following the 2026 résumé summary, the hero, About, and
-  Contact sections lead with teaching online in business and management, project management,
-  education and leadership, and IT, with instructional design and program leadership as secondary.
-- **Briljent platform left unnamed.** Your résumé says "[Zoom/Teams/Webex]" as a placeholder. The
-  site and the downloadable copy just say "live virtual sessions." Fill in the real platform in
-  your own copy before sending it out.
-- **Phone number omitted.** Your résumé lists 231-577-8181. A public page invites scraping and
-  robocalls; email and LinkedIn are higher-signal and lower-risk. Say the word and I'll add it.
+- **Two documents, two audiences (October 2026; refreshed November 2026 with the Capitol
+  Technology University committee role).** The academic CV (PDF) is for adjunct and
+  teaching roles; the résumé (Word) is for training, L&D, and professional roles. `cv.html`
+  mirrors the academic CV section for section (Teaching Areas, Teaching and Training Experience,
+  Related Professional Experience, Publications, Affiliations). The homepage Experience and Skills
+  sections follow the résumé. When either document changes, replace the file in `assets/docs/`
+  (same filename) and update the matching page.
+- **Positioned for online teaching first.** The hero, About, and Contact sections lead with
+  teaching online in the CV's four teaching areas (education and leadership, management and
+  business, project management, IT), with training and L&D work as the second track.
+- **Phone number not shown on the pages.** A public page invites scraping and robocalls; email and
+  LinkedIn are higher-signal and lower-risk. Note that the downloadable CV and résumé both include
+  your phone number and ZIP code, as they did before. Say the word if you want a phone-free copy
+  for the site.
 - **Location shown as "Cadillac, Michigan"** — no ZIP code.
 - **Email is assembled by JavaScript** rather than sitting in the HTML as plain text, with a
   readable `[at]`/`[dot]` fallback if scripts are blocked. Modest protection, no downside.
@@ -126,8 +130,15 @@ on. Check ownership before publishing anything.
   endpoint to maintain.
 - **EdD shown as completed in 2026.** This matches the updated résumé and keeps the portfolio
   consistent across the profile, research, credentials, and CV sections.
-- **Light theme only.** No dark mode. A warm academic palette is right for this audience, and a
-  half-finished second theme is a worse risk than not having one.
+- **Dark theme only (November 2026).** You asked for a darker, streamlined look that recruiters
+  can skim. The site is now one dark theme ("Night Study": navy, off-white text, gold accent),
+  with every text color checked against WCAG AA. There is no light/dark toggle on purpose.
+- **Streamlined for skimming (November 2026).** The homepage leads with current roles and the
+  resume button, then a five-bullet About, Experience (newest first, four bullets max per job),
+  Skills as tags, and three collapsed project cards. Philosophy statements stay collapsed at the
+  bottom as optional reading.
+- **SNHU MA in History removed (November 2026).** Both the November CV and resume dropped it, so
+  the site did too. Tell me if that was an oversight and I'll put it back.
 
 ---
 

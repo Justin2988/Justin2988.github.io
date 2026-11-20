@@ -1,12 +1,12 @@
 {
-  "name": "Justin Barczewski, Ed.D. — Educational Leadership & Program Development",
+  "name": "Justin Barczewski, Ed.D. — Adult Educator & Online Instructor",
   "short_name": "J. Barczewski",
-  "description": "Professional portfolio of Justin Barczewski, Ed.D., focused on educational leadership and higher education.",
+  "description": "Professional portfolio of Justin Barczewski, Ed.D., adult educator, online instructor, and doctoral committee chair.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#FAF7F2",
-  "theme_color": "#12233F",
+  "background_color": "#0C1018",
+  "theme_color": "#0C1018",
   "icons": [
     {
       "src": "/assets/img/favicon.svg",
